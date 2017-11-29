@@ -20,12 +20,10 @@ export default class Main extends React.Component {
     }
   }
 
-
-
   render() {
 
-    let notes = this.state.noteArray.map((val, key) => {
-      return <Note key={key} keyval={key} val={val}
+    let todoList = this.state.noteArray.map((val, key) => { // todo list
+      return <Note key={key} val={val} // props being passed
         deleteMethod={() => this.deleteNote(key)} />
     });
 
@@ -37,7 +35,7 @@ export default class Main extends React.Component {
         </View>
 
         <ScrollView style={styles.scrollContainer}>
-          {notes}
+          {todoList}
         </ScrollView>
 
         <View style={styles.footer}>
